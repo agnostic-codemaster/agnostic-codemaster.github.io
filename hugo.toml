@@ -1,3 +1,169 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://yanlan.org/"
+title = "Yanlan & Fan"
+paginate = 8
+theme = "PaperMod"
+enableInlineShortcodes = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+hasCJKLanguage = true
+
+[params]
+env = "production"
+description = "Design loser,slack off champion."
+author = "Fan"
+mainSections = [ "docs", "posts" ]
+disableAnchoredHeadings = true
+images = [ "cover.png" ]
+favicon = ""
+DateFormat = "2006-01-02"
+useCustomAnalytics = true
+defaultTheme = "auto"
+ShowAuthor = false
+ShowShareButtons = true
+ShowReadingTime = false
+ShowWordCount = false
+displayFullLangName = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = true
+ShowToc = false
+TocOpen = true
+TocSide = "right"
+EnableInstantClick = false
+EnableImageZoom = true
+hideMeta = false
+comments = false
+
+
+  [params.logo]
+  icon = "images/forge-v2-compat.svg"
+
+  [params.profileMode]
+  enabled = true
+  title = "Yanlan & Fan"
+  imageUrl = "images/homepage_photo.jpg"
+  imageTitle = "my image"
+
+  [params.homeInfoParams]
+  Title = "嗨 👋"
+  Content = """
+
+  欢迎来到这里～
+
+  欢迎在本博客留言骚扰～
+
+"""
+
+  [[params.socialIcons]]
+  name = "rss-simple"
+  url = "index.xml"
+
+  [[params.socialIcons]]
+  name = "gmail"
+  url = "mailto:7144206@qq.com"
+
+  [[params.socialIcons]]
+  name = "telegram-simple"
+  url = "https://t.me/wananaiko"
+
+  [params.editPost]
+  URL = "https://github.com/reorx/hugo-PaperModX/tree/exampleSite/content"
+  Text = "Suggest Changes"
+  appendFilePath = true
+
+[minify]
+disableXML = true
+
+[languages.en]
+languageName = "English"
+weight = 1
+
+[[languages.en.menu.main]]
+name = "说说"
+url = "/memos/"
+weight = 2
+
+[[languages.en.menu.main]]
+name = "相册"
+url = "/gallery/"
+weight = 3
+
+[[languages.en.menu.main]]
+name = "好物"
+url = "/goods/"
+weight = 4
+
+[[languages.en.menu.main]]
+name = "软件"
+url = "/stack/"
+weight = 5
+
+[[languages.en.menu.main]]
+name = "书签"
+url = "/bookmark/"
+weight = 6
+
+[[languages.en.menu.main]]
+name = "归档"
+url = "/archives/"
+weight = 8
+
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+style = "dracula"
+lineNos = false
+noClasses = false
+
+[privacy.vimeo]
+disabled = false
+simple = true
+
+[privacy.twitter]
+disabled = false
+enableDNT = true
+simple = true
+
+[privacy.instagram]
+disabled = false
+simple = true
+
+[privacy.youtube]
+disabled = false
+privacyEnhanced = true
+
+[services.instagram]
+disableInlineCSS = true
+
+[services.twitter]
+disableInlineCSS = true 
+
+[commentSystems.disqus]
+shortname = "reorx"
+
+[commentSystems.remark42]
+url = "https://remark42.wananaiko.com"
+site = "wananaiko"
+
+[commentSystems.telegramWidget]
+channel = "reorx_share"
+accentColor = "9077e1"
+limit = 20
+
+[defaultCommentSystems]
+remark42 = true
+
+[frontmatter]
+  lastmod = ['lastmod', ':git', ':fileModTime', 'date', 'publishDate']
