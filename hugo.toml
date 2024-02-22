@@ -58,15 +58,15 @@ comments = false
 """
 
   [[params.socialIcons]]
-  name = "rss-simple"
+  name = "google-scholar"
   url = "index.xml"
 
   [[params.socialIcons]]
-  name = "gmail"
+  name = "email"
   url = "mailto:7144206@qq.com"
 
   [[params.socialIcons]]
-  name = "telegram-simple"
+  name = "cv"
   url = "https://t.me/wananaiko"
 
   [params.editPost]
