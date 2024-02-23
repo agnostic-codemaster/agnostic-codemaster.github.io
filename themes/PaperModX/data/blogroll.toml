@@ -1,0 +1,69 @@
+[[blogroll]]
+  name = "木木木木木"
+  url = "https://immmmm.com"
+  favicon = "https://images.wananaiko.com/2023/01/o3wqCp.jpg"
+  description = "专业全栈开发工程师，生活化语言的技术博客。"
+  weight = 1
+
+[[blogroll]]
+  name = "旅行漫记"
+  url = "https://synyan.cn/"
+  favicon = "https://images.wananaiko.com/2023/04/synyan.png"
+  description = "器材党广角狗，博物馆爱好者，旅游点打卡员。"
+  weight = 2
+
+[[blogroll]]
+  name = "空白生活"
+  url = "https://koobai.com"
+  favicon = "https://images.wananaiko.com/2023/05/bN5Uy6.jpg"
+  description = "老一辈设计师前辈,15 年以上设计相关工作经验。"
+  weight = 3
+
+[[blogroll]]
+  name = "Reorx’s Forge"
+  url = "https://reorx.com"
+  favicon = "https://reorx.com/images/forge-v2-compat.svg"
+  description = "专业全栈开发工程师，活跃在各个主流互联网平台。"
+  weight = 4
+
+[[blogroll]]
+  name = "大大的小蜗牛"
+  url = "https://eallion.com"
+  favicon = "https://cdn.jsdelivr.net/gh/eallion/eallion/avatar/eallion.png"
+  description = "机会总是垂青于有准备的人。"
+  weight = 5
+
+[[blogroll]]
+  name = "Wayne Wu"
+  url = "https://wayne-wu.com"
+  favicon = "https://wayne-wu.com/avatar.jpeg"
+  description = "热爱编程，喜欢探索,摄影爱好者。"
+  weight = 6
+
+[[blogroll]]
+  name = "Bigfa"
+  url = "https://fatesinger.com"
+  favicon = "https://images.wananaiko.com/2023/05/7yWTFi.jpg"
+  description = "computer loser / generalist，远古 WordPress 玩家。"
+  weight = 7
+
+[[blogroll]]
+  name = "Dejavu's Blog"
+  url = "https://blog.dejavu.moe"
+  favicon = "https://images.wananaiko.com/2023/06/avatar.jpg"
+  description = "Not for success, just for growing."
+  weight = 8
+
+[[blogroll]]
+  name = "归臧"
+  url = "https://nuoea.com"
+  favicon = "https://images.wananaiko.com/2023/06/fGcbTQ.jpg"
+  description = "UI & UX Design, Blender & Eevee, 前端开发 & 小程序开发, Unity3D & Technical Art."
+  weight = 9
+
+[[blogroll]]
+  name = "D_SUPER BLOG"
+  url = "https://dsuper.xyz"
+  favicon = "https://dsuper.xyz/avatar.png"
+  description = "分享效率笔记、互联网技术、生活娱乐。"
+  weight = 10

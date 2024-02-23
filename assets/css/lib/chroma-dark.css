@@ -1,0 +1,119 @@
+/* Background */
+.chroma {
+  background-color: var(--code-bg);
+  color: #dddddd;
+}
+
+/* Line numbers */
+.chroma .ln {
+  color: #666666;
+}
+
+/* Comments */
+.chroma .c,
+.chroma .cd,
+.chroma .cm,
+.chroma .cp,
+.chroma .cpf {
+  color: #ffffff4f;
+}
+
+/* Error */
+.chroma .err {
+  color: #e47474;
+}
+
+/* Keyword */
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr {
+  color: #a0a5d6;
+}
+
+/* Literal */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1 {
+  color: #74ccaa;
+}
+
+/* Name */
+.chroma .na,
+.chroma .nb,
+.chroma .nc,
+.chroma .no,
+.chroma .nd,
+.chroma .ni,
+.chroma .ne,
+.chroma .nf,
+.chroma .nl,
+.chroma .nn,
+.chroma .nx,
+.chroma .py,
+.chroma .ow,
+.chroma .w,
+.chroma .mb,
+.chroma .mh,
+.chroma .mo,
+.chroma .se,
+.chroma .ss,
+.chroma .bp,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .il {
+  color: #5baeb7;
+}
+
+/* Operator */
+.chroma .o {
+  color: #a0a5d6;
+}
+
+.chroma .n {
+  color: #a0a5d6;
+}
+
+/* Punctuation */
+.chroma .p {
+  color: #ddddddba;
+}
+
+.chroma .kc {
+  color: #71c5a4;
+}
+
+.chroma .nt {
+  color: #e498bb;
+}
+
+.chroma .mi {
+  color: #dfb06d;
+}
+
+.chroma .kt {
+  color: #e498bb;
+}
+
+.chroma .mf {
+  color: #dfb06d;
+}
+.chroma .c1 {
+  color: #ffffff4f;
+}
+
+.chroma .n {
+  color: #5baeb7;
+}

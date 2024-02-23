@@ -1,7 +1,7 @@
 baseURL = "https://yanlan.org/"
 title = "Yanlan & Fan"
 paginate = 8
-theme = "PaperMod"
+theme = "PaperModX"
 enableInlineShortcodes = true
 enableRobotsTXT = true
 buildDrafts = false
@@ -62,7 +62,7 @@ comments = false
   url = "index.xml"
 
   [[params.socialIcons]]
-  name = "email"
+  name = "applemusic"
   url = "mailto:7144206@qq.com"
 
   [[params.socialIcons]]
@@ -96,10 +96,10 @@ name = "好物"
 url = "/goods/"
 weight = 4
 
-[[languages.en.menu.main]]
-name = "软件"
-url = "/stack/"
-weight = 5
+# [[languages.en.menu.main]]
+# name = "软件"
+# url = "/stack/"
+# weight = 5
 
 [[languages.en.menu.main]]
 name = "书签"

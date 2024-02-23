@@ -1,0 +1,203 @@
+<style>
+  .post-content a {
+    color: var(--primary);
+    box-shadow: none !important;
+    transition: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .post-content img {
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+
+  body {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #article-container a img {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .gallery-photos {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .gallery-photo {
+    min-height: 5rem;
+    width: calc(100% / 3 - 8px);
+    padding: 4px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+
+  .gallery-photo a {
+    border-radius: 8px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .gallery-photo img {
+    display: block;
+    width: 100%;
+    animation: fadeIn 1s;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out !important;
+  }
+
+  .gallery-photo span.photo-title,
+  .gallery-photo span.photo-time {
+    max-width: calc(100% - 7px);
+    line-height: 1.4;
+    position: absolute;
+    left: 4px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    color: #fff;
+    animation: fadeIn 1s;
+  }
+
+  .gallery-photo span.photo-title {
+    bottom: 4px;
+    border-radius: 0 8px 0 8px;
+  }
+
+  .gallery-photo span.photo-time {
+    top: 4px;
+    border-radius: 8px 0 8px 0;
+  }
+
+  .gallery-photo:hover img {
+    transform: scale(1.1);
+  }
+
+  .fancybox img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .gallery-photo span.photo-title,
+  .gallery-photo span.photo-time {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .gallery-photo:hover span.photo-title,
+  .gallery-photo:hover span.photo-time {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .gallery-photo {
+      width: 33.3%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .gallery-photo {
+      width: 49.9%;
+      padding: 3px;
+    }
+
+    .gallery-photo span.photo-time {
+      display: none;
+    }
+
+    .gallery-photo span.photo-title {
+      font-size: 12px;
+      line-height: 1.4rem;
+    }
+
+    .gallery-photo span.photo-title {
+      left: 3px;
+      bottom: 3px;
+    }
+  }
+</style>
+
+<script defer src="https://immmmm.com/waterfall.min.js"></script>
+<script defer src="https://immmmm.com/imgStatus.min.js"></script>
+<script defer src="https://immmmm.com/lately.min.js"></script>
+<script type="text/javascript" src="/js/view-image.min.js"></script>
+
+<script>
+  photos();
+  function photos() {
+    fetch("https://memos.yanlan.org/api/v1/memo?creatorId=1")
+      .then((res) => res.json())
+      .then((data) => {
+        let html = "",
+          imgs = [];
+        data.forEach((item) => {
+          imgs = imgs.concat(item.content.match(/\!\[.*?\]\(.*?\)/g));
+        });
+        imgs.forEach((item, index) => {
+          if (item == null) return;
+          let img = item.replace(/!\[.*?\]\((.*?)\)/g, "$1"),
+            time,
+            title,
+            tat = item.replace(/!\[(.*?)\]\(.*?\)/g, "$1");
+          if (tat.indexOf(" ") != -1) {
+            time = tat.split(" ")[0];
+            title = tat.split(" ")[1];
+          } else title = tat;
+          html += `<div class="gallery-photo slide-enter-content"><a href="${img}" data-fancybox="gallery" class="fancybox" data-thumb="${img}"><img class="no-lazyload photo-img" loading='lazy' decoding="async" src="${img}"></a>`;
+          title ? (html += `<span class="photo-title">${title}</span>`) : "";
+          time ? (html += `<span class="photo-time">${time}</span>`) : "";
+          html += `</div>`;
+        });
+        document.querySelector(".gallery-photos.page").innerHTML = html;
+        imgStatus.watch(".photo-img", () => {
+          waterfall(".gallery-photos");
+        });
+        window.Lately && Lately.init({ target: ".photo-time" });
+      })
+      .catch();
+  }
+
+  // 适配pjax
+  function whenDOMReady() {
+    if (location.pathname == "/photos/") photos();
+  }
+  whenDOMReady();
+  document.addEventListener("pjax:complete", whenDOMReady);
+
+  // 自适应
+  window.onresize = () => {
+    if (location.pathname == "/photos/") waterfall(".gallery-photos");
+  };
+
+  // 页面加载完成后为相关元素添加 .animation-disabled 类
+  document.addEventListener("DOMContentLoaded", function () {
+    const slideEnterElements = document.querySelectorAll(
+      "[slide-enter], .slide-enter, .slide-enter-content > *"
+    );
+
+    slideEnterElements.forEach(function (element) {
+      element.classList.add("animation-disabled");
+    });
+  });
+</script>
+
+<div class="gallery-photos page slide-enter-content">
+  <!-- <img src="/img/loading.svg" style="margin: auto" /> -->
+</div>
+
+<script>
+  window.ViewImage && ViewImage.init(".gallery-photo img");
+</script>

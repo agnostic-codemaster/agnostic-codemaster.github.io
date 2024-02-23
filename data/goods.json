@@ -1,0 +1,11 @@
+{
+  "good": [
+    {
+      "image": "assets/images/Mac_Mini_2020_silver.png",
+      "jiage": "Apple",
+      "title": "Mac mini M2",
+      "link": "https://www.apple.com/sg/shop/buy-mac/mac-mini/apple-m2-chip-with-8-core-cpu-and-10-core-gpu-256gb",
+      "note": "M系列处理器无比流畅"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{{/* section is AKA list */}}
+
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<article class="links-container slide-enter">
+  <blockquote>
+    <p>{{ .Description }}</p>
+  </blockquote>
+
+  <div class="links slide-enter-content">
+    {{ range .Site.Data.blogroll }}
+    {{ range sort . "weight" }}
+    <div class="item">
+        <div class="title">
+          {{- $url := urls.Parse .url }}
+          <span class="favicon" style="background-image: url({{ .favicon | default (printf "%s/favicon.ico" .url ) }});"></span
+            ><a href="{{ .url }}" target="_blank">{{ .name }}</a><span style="margin-left:.2rem" class="open-link">→</span>
+        </div>
+        <div class="description">
+          {{- .domain | default $url.Host }}
+          {{- with .description }}<span class="delimiter"></span>{{ . }}{{- end }}
+        </div>
+      </div>
+    {{ end }}
+{{ end }}
+  </div>
+</article>
+ {{ if not (eq .Params.Comments "false") }} {{ partial "comments.html" . }} {{
+end }}
+{{- end }}

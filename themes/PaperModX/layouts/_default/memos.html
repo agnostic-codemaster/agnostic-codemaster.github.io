@@ -1,0 +1,65 @@
+{{- define "main" }}
+
+<link rel="stylesheet" href="/css/highlight.github.min.css" />
+<link rel="stylesheet" href="/css/memos.css" />
+
+<meta name="referrer" content="no-referrer" />
+<link rel="stylesheet" href="/assets/APlayer.min.css?v=1.10.1" />
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description }}</div>
+  {{- end }}
+</header>
+
+
+  <section id="main" class="container">
+    <div class="count">
+      <p class="meta-item" style="font-size: 0.95rem;">
+      当前共有
+      <span id="memonums"> … </span>
+      条memos
+    </p>
+    </div>
+    <div id="album"></div>
+    <div id="memos">
+      <!-- 嘀咕加载在这里 -->
+    </div>
+  </div>
+
+    <!-- 设置memos部分的所有链接在新标签页打开 -->
+  <script type="text/javascript">
+    document.querySelector("#bber").addEventListener("click", function (e) {
+      if (e.target.tagName == "A") {
+        e.preventDefault();
+        window.open(e.target.href);
+      }
+    });
+  </script>
+  </section>
+
+<script type="text/javascript">
+  var memos = {
+    host: "https://memos.yanlan.org/", //修改为自己部署 Memos 的网址，末尾有 / 斜杠
+    limit: "10", //默认每次显示 10 条
+    creatorId: "1", //默认为 101 用户 https://demo.usememos.com/u/101
+    domId: "#memos", //默认为 #memos
+  };
+</script>
+
+<script type="text/javascript" src="/assets/marked.min.js?v=4.2.2"></script>
+<script type="text/javascript" src="/assets/pangu.min.js?v=4.0.7"></script>
+<script type="text/javascript" src="/assets/moment.min.js?v=2.29.4"></script>
+<script type="text/javascript" src="/assets/moment.twitter.min.js"></script>
+<script type="text/javascript" src="/assets/APlayer.min.js?v=1.10.1"></script>
+<script type="text/javascript" src="/assets/Meting.min.js?v=1.2"></script>
+<script type="text/javascript" src="/assets/memos.js"></script>
+<script type="text/javascript" src="/assets/highlight.min.js?v=11.7.0"></script>
+<script type="text/javascript" src="/assets/view-image.min.js?v=2.0.2"></script>
+
+<script>
+  window.ViewImage && ViewImage.init(".container img");
+</script>
+
+{{- end -}}
