@@ -144,6 +144,7 @@ mark {
 
 .social-icons {
   display: flex;
+  justify-content: center;
 }
 
 .social-icons a {
@@ -158,13 +159,13 @@ mark {
 }
 
 .social-icons a svg {
-  color: var(--content);
+  /* color: var(--content); */
   height: 28px;
   width: 28px;
   transition: transform 150ms cubic-bezier(0.2, 0, 0.2, 1) !important;
   will-change: transform !important;
-  cursor: auto;
-  vertical-align: middle;
+  /* cursor: auto; */
+  /* vertical-align: middle; */
   display: block;
 }
 
@@ -178,7 +179,8 @@ svg.iconpark-icon-home:hover {
   top: -32px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background-color: transparent;
   color: var(--entry);
   font-size: 10px;
   line-height: 20px;

@@ -44,35 +44,25 @@ comments = false
   [params.profileMode]
   enabled = true
   title = "Yanlan & Fan"
-  imageUrl = "images/homepage_photo.jpg"
+  imageUrl = "/images/homepage_photo.jpg"
   imageTitle = "my image"
 
-  [params.homeInfoParams]
-  Title = "嗨 👋"
-  Content = """
-
-  欢迎来到这里～
-
-  欢迎在本博客留言骚扰～
-
-"""
-
   [[params.socialIcons]]
-  name = "google-scholar"
+  name = "googlescholar"
   url = "index.xml"
 
   [[params.socialIcons]]
-  name = "applemusic"
+  name = "discord"
   url = "mailto:7144206@qq.com"
 
   [[params.socialIcons]]
   name = "cv"
   url = "https://t.me/wananaiko"
 
-  [params.editPost]
-  URL = "https://github.com/reorx/hugo-PaperModX/tree/exampleSite/content"
-  Text = "Suggest Changes"
-  appendFilePath = true
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/mcgradymvp"
+
 
 [minify]
 disableXML = true
@@ -93,7 +83,7 @@ weight = 3
 
 [[languages.en.menu.main]]
 name = "好物"
-url = "/goods/"
+url = "/timeline/"
 weight = 4
 
 # [[languages.en.menu.main]]
